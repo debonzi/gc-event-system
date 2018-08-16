@@ -1,0 +1,39 @@
+graph TD;
+A[Service A] --> AP
+AP[Service A Publisher] --> |SIGNUP_EVENT| AT[Service A Event Topic]
+AP[Service A Publisher] --> |LOGIN_EVENT| AT[Service A Event Topic]
+AT[Service A Event Topic] --> BS[Service B Subscriber Queue]
+AT[Service A Event Topic] --> CS[Service C Subscriber Queue]
+AT[Service A Event Topic] --> DS[Service D Subscriber Queue]
+BS[Service B Subscriber Queue] --> B[Service B]
+B[Service B] --> BEH[Event Handler]
+BEH[Event Handler] --> BSUH[SIGNUP_EVENT handler]
+BEH[Event Handler] --> BSLD[LOGIN_EVENT discarted]
+CS[Service C Subscriber Queue] --> C[Service C]
+C[Service B] --> CEH[Event Handler]
+CEH[Event Handler]
+CEH[Event Handler] --> CSUH[SIGNUP_EVENT discarted]
+CEH[Event Handler] --> CSLD[LOGIN_EVENT handler]
+DS[Service D Subscriber Queue] --> D[Service D]
+D[Service B] --> DEH[Event Handler]
+DEH[Event Handler]
+DEH[Event Handler] --> DSUH[SIGNUP_EVENT handler]
+DEH[Event Handler] --> DSLD[LOGIN_EVENT handler]
+
+SC[Service Code]
+GCES[GCES Code]
+GCPS[Google Cloud Pub/Sub]
+
+classDef services fill:#42f4d9;
+classDef gcpubsub fill:#6dacff;
+classDef gces fill:#a0d82f;
+class A,B,C,D services
+class AT,BS,CS,DS gcpubsub;
+class AP,BEH,CEH,DEH gces;
+class BSUH,CSUH gces;
+class BSLD,CSLD services;
+class DSLD,DSUH services;
+
+class SC services;
+class GCES gces;
+class GCPS gcpubsub;
