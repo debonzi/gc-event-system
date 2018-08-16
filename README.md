@@ -1,6 +1,6 @@
 [![Build Status](https://travis-ci.org/debonzi/gc-event-system.svg?branch=master)](https://travis-ci.org/debonzi/gc-event-system)
-[![PyPI](https://img.shields.io/pypi/v/gc-event-system.svg)](https://github.com/debonzi/gc-event-system)
-[![PyPI](https://img.shields.io/pypi/pyversions/gc-event-system.svg)](https://github.com/debonzi/gc-event-system)
+[![PyPI](https://img.shields.io/pypi/v/gces.svg)](https://github.com/debonzi/gc-event-system)
+[![PyPI](https://img.shields.io/pypi/pyversions/gces.svg)](https://github.com/debonzi/gc-event-system)
 [![Coverage Status](https://coveralls.io/repos/github/debonzi/gc-event-system/badge.svg)](https://coveralls.io/github/debonzi/gc-event-system)
 
 # GCES - Google Cloud Event System
