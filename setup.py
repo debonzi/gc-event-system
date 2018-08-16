@@ -17,6 +17,7 @@ extras_require = {
     'test': [
         'pytest',
         'pytest-cov',
+        'mock',
     ],
     'ci': [
         'python-coveralls',

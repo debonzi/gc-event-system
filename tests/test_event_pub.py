@@ -1,4 +1,4 @@
-from unittest import mock
+import mock
 from gces import EventPublisher
 
 @mock.patch('gces.pub_events.Publisher')
