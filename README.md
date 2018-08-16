@@ -4,7 +4,7 @@
 This project aims make it easier to have a global Event Publisher/Event Subscriber system to be used accross services.
 
 ## Architecture
-![Architecture](docs/overview.png)
+![Architecture](docs/overview.svg)
 
 ## Quick Event Notification Example
 ```python
