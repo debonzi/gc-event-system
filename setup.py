@@ -21,6 +21,7 @@ with open('README.md') as f:
 
 requires = [
     'google-cloud-pubsub',
+    'python-dateutil'
 ]
 
 extras_require = {
@@ -39,7 +40,7 @@ extras_require = {
 
 
 setup(name='gces',
-      version='0.0.3-alpha',
+      version='0.0.4-alpha',
       description='Google Cloud Event System.',
       long_description=long_description,
       long_description_content_type='text/markdown',
