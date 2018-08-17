@@ -40,7 +40,7 @@ extras_require = {
 
 
 setup(name='gces',
-      version='0.0.4-alpha',
+      version='0.0.5-alpha',
       description='Google Cloud Event System.',
       long_description=long_description,
       long_description_content_type='text/markdown',
@@ -56,6 +56,6 @@ setup(name='gces',
       ],
       install_requires=requires,
       extras_require=extras_require,
-      url='',
+      url='https://github.com/debonzi/gc-event-system',
       packages=['gces'],
       )
