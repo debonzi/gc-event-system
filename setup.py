@@ -40,7 +40,7 @@ extras_require = {
 
 
 setup(name='gces',
-      version='0.0.6-alpha',
+      version='0.0.7-alpha',
       description='Google Cloud Event System.',
       long_description=long_description,
       long_description_content_type='text/markdown',
