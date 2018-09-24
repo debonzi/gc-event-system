@@ -29,6 +29,7 @@ extras_require = {
         'celery[redis]>=3.1.20',
     ],
     'test': [
+        'coverage==4.5.1',
         'pytest==3.8.1',
         'pytest-cov==2.6.0',
         'mock==2.0.0',
