@@ -18,7 +18,7 @@ class Subscriber(object):
             self.gcloud_project_id, self.subscriber_name
         )
         self._ensure_subscription(topic_name)
-        self.subscriber.subscribe(self.subscription_path, callback=callback)
+        self.future = self.subscriber.subscribe(self.subscription_path, callback=callback)
 
     def _create_subscription(self, topic_name):
         topic_path = self.subscriber.topic_path(self.gcloud_project_id, topic_name)  #pylint: disable=E1101
