@@ -29,12 +29,12 @@ extras_require = {
         'celery[redis]>=3.1.20',
     ],
     'test': [
-        'pytest',
-        'pytest-cov',
-        'mock',
+        'pytest==3.8.1',
+        'pytest-cov==2.6.0',
+        'mock==2.0.0',
     ],
     'ci': [
-        'python-coveralls',
+        'python-coveralls==2.9.1',
     ]
 }
 
