@@ -27,6 +27,7 @@ requires = [
 extras_require = {
     'celery': [
         'celery[redis]>=3.1.20',
+        'minicache==0.0.1',
     ],
     'test': [
         'coverage==4.5.1',
@@ -41,7 +42,7 @@ extras_require = {
 
 
 setup(name='gces',
-      version='0.0.8-alpha',
+      version='0.0.9-alpha',
       description='Google Cloud Event System.',
       long_description=long_description,
       long_description_content_type='text/markdown',
