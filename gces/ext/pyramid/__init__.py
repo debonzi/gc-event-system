@@ -20,6 +20,8 @@ class EventPublisher(object):
     def __getattr__(self, item):
         return getattr(self._pub, item)
 
+class NamelessTopicError(Exception):
+    """Raised when configuration topic name is None"""
 
 event_publisher = EventPublisher()
 
@@ -30,7 +32,12 @@ def to_bool(value):
 
 def includeme(config):  # pragma: no cover
     settings = config.registry.settings
+    # Prevents the creation of a topic with name 'None'
+    topic_name = settings['gces.event_publisher.topic_name']
+    if not topic_name:
+        error_msg = 'Add a name to "gces.event_publisher.topic_name" in your configuration environment'
+        raise NamelessTopicError(error_msg)
     event_publisher.setup(
-        settings['gces.event_publisher.topic_name'],
+        topic_name,
         to_bool(settings['gces.ext.pyramid.event_publisher.disabled'])
     )
