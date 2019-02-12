@@ -30,7 +30,7 @@ def _send_notification(topic_name, event_name, data):
 
 
 
-@celery.shared_task(bind=True, name=GCES_PUBLISHER_NAME, queue=GCES_PUBLISHER_QUEUE, acks_late=True)
+@celery.shared_task(bind=True, name=GCES_PUBLISHER_NAME, queue=GCES_PUBLISHER_QUEUE, acks_late=True, ignore_result=True)
 def _event_publisher_task(self, topic_name, event_name, data):
     try:
         return _send_notification(topic_name, event_name, data)
