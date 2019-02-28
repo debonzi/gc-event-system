@@ -1,3 +1,6 @@
+import pytest
+from google.auth.exceptions import DefaultCredentialsError
+
 from gces.ext.pyramid import DisabledPublisher, includeme, to_bool
 
 
@@ -23,6 +26,28 @@ def test_pyramid_disabled_event_publisher(pyramid_config):
     pyramid_config.registry.settings = {
         'gces.event_publisher.topic_name': 'tracking.events',
         'gces.ext.pyramid.event_publisher.disabled': True
+    }
+
+    includeme(pyramid_config)
+    from gces.ext.pyramid import event_publisher
+    assert isinstance(event_publisher._pub, DisabledPublisher)
+
+
+def test_pyramid_exception_when_fallback_disabled(pyramid_config):
+    pyramid_config.registry.settings = {
+        'gces.event_publisher.topic_name': 'tracking.events',
+        'gces.ext.pyramid.event_publisher.disabled': False
+    }
+
+    with pytest.raises(DefaultCredentialsError):
+        includeme(pyramid_config)
+
+
+def test_pyramid_publisher_disabled_when_fallback_enabled(pyramid_config):
+    pyramid_config.registry.settings = {
+        'gces.event_publisher.topic_name': 'tracking.events',
+        'gces.ext.pyramid.event_publisher.disabled': False,
+        'gces.ext.pyramid.event_publisher.fallback_to_disabled': True
     }
 
     includeme(pyramid_config)

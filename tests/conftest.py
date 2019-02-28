@@ -1,3 +1,4 @@
+import os
 import pytest
 
 
@@ -10,5 +11,7 @@ def pyramid_config():
     class Config(object):
         def __init__(self):
             self.registry = Registry()
-    
+
+    os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "/__tmp__/__no_file__"
+
     return Config()
