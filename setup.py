@@ -20,8 +20,8 @@ with open('README.md') as f:
     long_description = long_desc_img_replacer(f.read())
 
 requires = [
-    'google-cloud-pubsub',
-    'python-dateutil'
+    'google-cloud-pubsub<2.0.0',
+    'python-dateutil<3.0.0',
 ]
 
 extras_require = {
@@ -42,7 +42,7 @@ extras_require = {
 
 
 setup(name='gces',
-      version='0.0.12-alpha',
+      version='0.0.13-alpha',
       description='Google Cloud Event System.',
       long_description=long_description,
       long_description_content_type='text/markdown',
